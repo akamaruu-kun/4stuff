@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dpijrev5otmj1"]
+
+[ext_resource type="Script" uid="uid://bvf0im7amhy5h" path="res://scenes/mainmenu.gd" id="1_dfy5j"]
+[ext_resource type="Texture2D" uid="uid://ciu3nac7fxkse" path="res://mainmenustuff/whitebg..jpg" id="2_dfy5j"]
+[ext_resource type="Script" uid="uid://c0o8lhaplkct3" path="res://scenes/thebuttons.gd" id="3_dfy5j"]
+[ext_resource type="Texture2D" uid="uid://bxq62gpvigufr" path="res://mainmenustuff/1-removebg-preview.png" id="4_h73c4"]
+[ext_resource type="Texture2D" uid="uid://bulnnf2u0vtqb" path="res://mainmenustuff/2-removebg-preview.png" id="5_uui5l"]
+[ext_resource type="Texture2D" uid="uid://b1mw5bcvvvgx3" path="res://mainmenustuff/3-removebg-preview.png" id="6_4hago"]
+[ext_resource type="Texture2D" uid="uid://dlxv0bkkvxdea" path="res://mainmenustuff/4-removebg-preview.png" id="7_gjjcl"]
+
+[node name="mainmenu" type="Node2D" unique_id=2028369838]
+script = ExtResource("1_dfy5j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1161797209]
+position = Vector2(575.25, 321.25)
+scale = Vector2(5.1177783, 2.8866668)
+texture = ExtResource("2_dfy5j")
+
+[node name="thebuttons" type="Control" parent="." unique_id=98230842]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 2.0
+offset_right = 40.0
+offset_bottom = 42.0
+script = ExtResource("3_dfy5j")
+
+[node name="start" type="TextureButton" parent="thebuttons" unique_id=1583622351]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 23.0
+offset_right = 894.0
+offset_bottom = 398.0
+texture_normal = ExtResource("4_h73c4")
+texture_hover = ExtResource("5_uui5l")
+
+[node name="quit" type="TextureButton" parent="thebuttons" unique_id=607600076]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 260.0
+offset_right = 894.0
+offset_bottom = 635.0
+texture_normal = ExtResource("6_4hago")
+texture_hover = ExtResource("7_gjjcl")
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=565604008]
+offset_left = 468.0
+offset_top = 77.0
+offset_right = 648.0
+offset_bottom = 116.0
+text = "akamaru's testground"
+
+[connection signal="pressed" from="thebuttons/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="thebuttons/start" to="thebuttons" method="_on_start_pressed"]
+[connection signal="pressed" from="thebuttons/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="thebuttons/quit" to="thebuttons" method="_on_quit_pressed"]
